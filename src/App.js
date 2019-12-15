@@ -6,15 +6,22 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   const [item, setitem] = useState([]);
   var first = React.createRef();
+  var [bool, setbool] = useState(true);
 
   const handleClick = () => {
-    document.getElementsByClassName("in").disabled = true;
+    setbool((bool = !bool));
   };
 
   const handlekey = ev => {
     if (ev.key === "Enter") {
+      if (first.value === "") {
+        alert("Input Field Cant be Empty!");
+        return;
+      }
+
       setitem(item.concat(first.value));
       first.value = "";
+      setbool((bool = true));
     }
   };
   return (
@@ -25,7 +32,7 @@ function App() {
           +
         </button>
       </span>
-      <div className="row in">
+      <div hidden={bool} className="row in">
         <div className="card offset-6 col-6">
           <span className="card-body bg-yellow col-12">
             <input
