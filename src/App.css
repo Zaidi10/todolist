@@ -1,10 +1,24 @@
 .h {
-  color: yellow;
+  color: #FFD50D;
   display: inline;
 }
 
 ul {
   list-style-type: none;
+}
+
+li {
+  margin-left: 0px !important;
+  padding-left: 0px !important;
+  color: #C7C7C9 !important;
+}
+
+button {
+
+  background-color: #58595B !important;
+  font-size: 1.8rem !important;
+  border-radius: 20px !important;
+
 }
 
 span .noBorder {
